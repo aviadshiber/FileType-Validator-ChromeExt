@@ -1,4 +1,0 @@
-policy:
-  block:
-    - image/png
-    - application/x-msdownload
