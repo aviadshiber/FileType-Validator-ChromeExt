@@ -21,6 +21,8 @@ meaning by blacklisting mime types.
 ## FAQ
 *why in python?*
 because it is a dynamic language which make it easy to write short service as this. this can easily be done in Go-lang or any other robust language.
+
+
 *How can I change the configuration file?*
 it is not implemented yet, but the configuration should be extrernalzied with docker volume,
 and in the future the configuration.yaml will be replaced with a configmap.
