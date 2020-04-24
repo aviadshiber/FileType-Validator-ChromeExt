@@ -1,5 +1,5 @@
 # CheckPoint
-task is to create a security system that prevents users from downloading executable files in Chrome browser.
+The task is to create a security system that prevents users from downloading executable files in Chrome browser.
 
 Your system will monitor each file downloaded in Chrome and use a cloud service to determine the downloaded file type.
 
