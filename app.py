@@ -1,4 +1,5 @@
 import io
+import os
 from flask import Flask
 from flask import request
 import filetype
@@ -47,4 +48,7 @@ def loop():
 
 
 if __name__ == "__main__":
-    app.run()
+    port = os.environ.get('PORT')
+    if port is None:
+        port = 5000
+    app.run(port=port)
