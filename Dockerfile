@@ -4,7 +4,7 @@ ENV STATIC_URL /static
 ENV STATIC_PATH /var/www/app/static
 COPY ./requirements.txt /var/www/requirements.txt
 RUN pip install -r /var/www/requirements.txt
-COPY ./configuration.yaml ./app/configuration.yaml
-COPY ./app.py ./app/app.py
-ENTRYPOINT ["python"]
-CMD ["app/app.py"]
+COPY ./configuration.yaml ./configuration.yaml
+COPY ./app.py ./app.py
+EXPOSE 80
+CMD ["python","app.py"]

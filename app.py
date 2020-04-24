@@ -37,6 +37,9 @@ def analyze_content():
     else:
         logging.error('Error with loading policy from configuration.yaml')
 
+@app.route('/', methods=["GET"])
+def root():
+    return 'ok!'
 
 @app.route('/loop', methods=["POST"])
 def loop():
@@ -47,6 +50,6 @@ def loop():
 if __name__ == "__main__":
     port = os.environ.get('PORT')
     if port is None:
-        port = 5000
+        port = 80
     print('using port ', port)
-    app.run(port=port)
+    app.run(port=port,host='0.0.0.0')
