@@ -41,9 +41,6 @@ def analyze_content():
 @app.route('/loop', methods=["POST"])
 def loop():
     data = request.data
-    bytes_stream = list(io.BytesIO(request.data))[:512]
-    print(len(bytes_stream))
-
     return data
 
 
@@ -51,4 +48,5 @@ if __name__ == "__main__":
     port = os.environ.get('PORT')
     if port is None:
         port = 5000
+    print('using port ', port)
     app.run(port=port)
