@@ -1,0 +1,23 @@
+language: generic
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t 155663/aviad-filetype-service -f Dockerfile .
+
+script:
+  - docker run -e CI=true 155663/aviad-filetype-service
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-aviad-file-type"
+  env: "DockerAviadFileType-env"
+  bucket_name: "elasticbeanstalk-us-east-2-630943284793"
+  bucket_path: "docker-aviad-file-type"
+  on:
+    master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
