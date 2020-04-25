@@ -12,9 +12,10 @@ Just send a Blob object to that endpoint , and the service will validate if the 
 the policy of the service is dictated by the configuration.yaml file with the following format:
 
     policy:
-	    block:
-		    - image/png
-		    - application/x-msdownload
+      block:
+        - mime_type1
+	- mime_type2
+	- etc
 
 meaning by blacklisting mime types.
 
